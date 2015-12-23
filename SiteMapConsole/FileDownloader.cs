@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Net;
 
 namespace SiteMapConsole
@@ -12,6 +13,7 @@ namespace SiteMapConsole
             {
                 client.DownloadFile(fileUrl, filename);
             }
+            Console.WriteLine("Parsing {0}",filename);
             return filename;
         }
     }

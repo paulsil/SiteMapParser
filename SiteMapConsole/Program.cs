@@ -8,8 +8,9 @@ namespace SiteMapConsole
     {
         static void Main(string[] args)
         {
-
-            var sitemaps = new RobotsFileParser("ao.com").SiteMapUrls();
+            Console.WriteLine("Enter domain to parse robots.txt file:");
+            var domain = Console.ReadLine();
+            var sitemaps = new RobotsFileParser(domain).SiteMapUrls();
 
             var siteUrls = new List<string>();
             var productUrls = new List<string>();
@@ -30,6 +31,7 @@ namespace SiteMapConsole
             WriteLinkToFile(productUrls, "products.csv");
 
             Console.WriteLine("fetched {0} urls",siteUrls.Count);
+            Console.WriteLine("Press any key to close..");
             Console.ReadKey();
         }
 
